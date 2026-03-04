@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { formatStatus } from "@/lib/utils";
 
 type Prescription = {
   id: string;
@@ -45,12 +46,6 @@ export default function PatientPrescriptionsPage() {
   useEffect(() => {
     loadData();
   }, [loadData]);
-
-  const formatStatus = (s: string) =>
-    s
-      .toLowerCase()
-      .replace("_", " ")
-      .replace(/\b\w/g, (c) => c.toUpperCase());
 
   if (loading) {
     return (

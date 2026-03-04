@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { formatStatus } from "@/lib/utils";
 
 function DrugNameAutocomplete({
   value,
@@ -300,9 +301,6 @@ export default function DoctorAppointmentsPage() {
       setCallingNext(false);
     }
   }
-
-  const formatStatus = (s: string) =>
-    s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   if (loading) {
     return (

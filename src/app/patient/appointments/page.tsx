@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { formatStatus } from "@/lib/utils";
 
 type Appointment = {
   id: string;
@@ -186,12 +187,6 @@ export default function PatientAppointmentsPage() {
       setCancellingId(null);
     }
   }
-
-  const formatStatus = (s: string) =>
-    s
-      .toLowerCase()
-      .replace("_", " ")
-      .replace(/\b\w/g, (c) => c.toUpperCase());
 
   if (loading) {
     return (

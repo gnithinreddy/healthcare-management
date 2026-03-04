@@ -22,22 +22,6 @@ export async function getPharmacies() {
   }));
 }
 
-export async function getPharmacyById(id: string) {
-  const p = await prisma.pharmacy.findUnique({
-    where: { id },
-    include: { clinic: true },
-  });
-  if (!p) return null;
-  return {
-    id: p.id,
-    name: p.name,
-    phone: p.phone ?? null,
-    licenseNumber: p.licenseNumber ?? null,
-    clinicId: p.clinicId,
-    clinicName: p.clinic?.name ?? null,
-  };
-}
-
 export async function getInventory(pharmacyId?: string) {
   const where = pharmacyId ? { pharmacyId } : {};
   const items = await prisma.pharmacyInventory.findMany({

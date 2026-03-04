@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { formatStatus } from "@/lib/utils";
 
 type Patient = {
   id: string;
@@ -126,9 +127,6 @@ export default function ReceptionistPatientsPage() {
       setProfileLoading(false);
     }
   }
-
-  const formatStatus = (s: string) =>
-    s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 
   return (
     <div className="space-y-6">

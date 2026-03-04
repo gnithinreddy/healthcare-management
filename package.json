@@ -8,9 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node prisma/seed.js",
-    "db:seed": "prisma db seed",
-    "test:billing": "node scripts/test-billing-search.js",
-    "test:pipeline": "node scripts/test-billing-pipeline.js"
+    "db:seed": "prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "^6.19.2",
