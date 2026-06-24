@@ -235,11 +235,6 @@ npm i --save-dev @types/bcryptjs
 
 ---
 
-## License
-
-Private project.
-
----
 
 ## Repository
 
